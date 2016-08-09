@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express();
 
+var port = process.env.PORT || 8080;
+
   app.route("/").get(function(req, res) {
       //serve index.html, for now just send str
     //res.sendFile(process.cwd() + '/public/index.html');
@@ -44,6 +46,6 @@ var decodeString = function(str) {
     } 
 }
 
-app.listen('8080', function() {
+app.listen(port, function() {
     console.log("listening...");
 });
